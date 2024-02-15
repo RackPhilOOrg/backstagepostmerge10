@@ -4,14 +4,6 @@ terraform {
       source                = "hashicorp/azurerm"
     }
   }
-    # Update this block with the location of your terraform state file
-  backend "azurerm" {
-    resource_group_name  = "rg-terraformpostmerg10"
-    storage_account_name = "tfpostmoerge10"
-    container_name       = "terraform-state"
-    key                  = "terraform.tfstate"
-    use_oidc             = true
-  }
 }
 
 locals {

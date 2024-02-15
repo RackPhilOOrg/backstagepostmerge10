@@ -33,6 +33,7 @@ module "resource_group" {
       config                   = each.value
       locationShortcode        = local.boundary.locationShortcode
       serviceBoundaryShortcode = local.boundary.serviceBoundaryShortcode
+      serviceBoundary          = local.boundary.serviceBoundary
       subscriptionGuid         = local.boundary.subscriptionGuid
     }
   )
