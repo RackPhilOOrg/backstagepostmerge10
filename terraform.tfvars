@@ -1,3 +1,15 @@
-# Sample values
-resource_group_name = "rg-terraform-github-actions"
-location            = "uksouth"
+################# boundary #################
+boundary = {
+  config = {
+    locationShortcode                      = "uks"
+    serviceBoundary                        = "corporate"
+    serviceBoundaryShortcode               = "cor"
+    subscriptionGuid                       = "ce"
+
+    resourceGroup = [
+      {
+        resourceGroupId = "01"
+      }
+    ]
+}  
+}
