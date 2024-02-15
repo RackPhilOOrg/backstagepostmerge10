@@ -26,14 +26,14 @@ locals {
 }
 
 module "resource_group" {
-  source = "./modules/azurerm/resource_group"
-  for_each = {for s in local.boundary.resourceGroup : s.resourceGroupId => s}
+  source   = "./modules/azurerm/resource_group"
+  for_each = { for s in local.boundary.resourceGroup : s.resourceGroupId => s }
   resourceGroup = merge(
     {
-      config = each.value
-      locationShortcode = local.boundary.locationShortcode
+      config                   = each.value
+      locationShortcode        = local.boundary.locationShortcode
       serviceBoundaryShortcode = local.boundary.serviceBoundaryShortcode
-      subscriptionGuid = local.boundary.subscriptionGuid
+      subscriptionGuid         = local.boundary.subscriptionGuid
     }
   )
 }
